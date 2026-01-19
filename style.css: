@@ -6,3 +6,18 @@ body{
 	padding: 10px 10px 10px 10px;
 	font-family: sans serif;
     }
+
+body {
+background-color:#fff8e1;
+color:#ffd700
+margin-left: 20%
+margin-right:20%
+border:1px dotted ,black;
+padding:10px
+font-family: sans-serif;
+}
+blockquote.q {
+color: #ffa500
+border-left: 4px solid @880000
+font-style: italic
+}
