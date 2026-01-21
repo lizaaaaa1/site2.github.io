@@ -20,115 +20,127 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Учебный пример RSA (p=7, q=13)</title>
+  <title>Учебный и реальный RSA</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.7;
-      max-width: 800px;
-      margin: 40px auto;
+      max-width: 900px;
+      margin: 30px auto;
       padding: 20px;
       background-color: #fdfdfd;
       color: #222;
     }
     h1 {
       text-align: center;
-      color: #8e44ad;
-      margin-bottom: 30px;
-      font-size: 26px;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      font-size: 28px;
     }
     h2 {
-      color: #9b59b6;
-      margin-top: 25px;
-      font-size: 20px;
+      color: #2980b9;
+      margin-top: 30px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 8px;
+    }
+    .example {
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      border-left: 5px solid #3498db;
+    }
+    .real-n {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 20px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 14px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
     }
     pre {
-      background-color: #f9f0ff;
+      background-color: #f0f8ff;
       padding: 14px;
       border-radius: 8px;
       overflow-x: auto;
       font-size: 16px;
-      border-left: 4px solid #9b59b6;
       margin: 15px 0;
     }
     .keys {
-      background-color: #f5e6ff;
-      padding: 18px;
-      border-radius: 10px;
-      margin: 25px 0;
-      font-weight: bold;
-      font-size: 19px;
-      color: #8e44ad;
-      text-align: center;
-      border: 2px solid #e6d4ff;
-    }
-    .note {
       background-color: #e8f4fc;
       padding: 16px;
       border-radius: 8px;
+      margin: 20px 0;
+      font-weight: bold;
+      text-align: center;
+    }
+    .note {
+      background-color: #fff8e1;
+      padding: 16px;
+      border-radius: 8px;
       margin: 25px 0;
-      border-left: 5px solid #3498db;
-      font-size: 16px;
+      border-left: 5px solid #ffc107;
     }
     code {
       background-color: #f1f1f1;
       padding: 2px 6px;
       border-radius: 4px;
       font-family: monospace;
-      font-size: 16px;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 8px;
     }
   </style>
 </head>
 <body>
 
-  <h1>Учебный пример алгоритма RSA<br><small>(с числами p = 7, q = 13)</small></h1>
+  <h1>Учебный и реальный пример RSA</h1>
 
-  <h2>1. Выбираем два простых числа <code>p</code> и <code>q</code></h2>
-  <p>Простые числа делятся только на 1 и самих себя.</p>
-  <pre>p = 7<br>q = 13</pre>
+  <!-- Учебный пример -->
+  <div class="example">
+    <h2>📚 Учебный пример (p = 7, q = 13)</h2>
+    
+    <p><strong>1. Простые числа:</strong></p>
+    <pre>p = 7,  q = 13</pre>
 
-  <h2>2. Вычисляем модуль <code>n = p × q</code></h2>
-  <pre>n = 7 × 13 = 91</pre>
+    <p><strong>2. Модуль:</strong></p>
+    <pre>n = p × q = 7 × 13 = 91</pre>
 
-  <h2>3. Вычисляем функцию Эйлера <code>φ(n)</code></h2>
-  <pre>φ(n) = (p − 1)(q − 1) = (7 − 1) × (13 − 1) = 6 × 12 = 72</pre>
+    <p><strong>3. Функция Эйлера:</strong></p>
+    <pre>φ(n) = (7−1)(13−1) = 6 × 12 = 72</pre>
 
-  <h2>4. Выбираем открытую экспоненту <code>e</code></h2>
-  <p>Требования:</p>
-  <ul>
-    <li><code>1 &lt; e &lt; φ(n)</code></li>
-    <li><code>НОД(e, φ(n)) = 1</code></li>
-  </ul>
-  <p>Выбираем <code>e = 5</code>:</p>
-  <pre>НОД(5, 72) = 1 → ✅ подходит!</pre>
-  <p>Другие возможные значения: 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47, 49, 53, 55, 59, 61, 65, 67, 71.</p>
+    <p><strong>4. Открытая экспонента:</strong> e = 5 (НОД(5, 72) = 1)</p>
 
-  <h2>5. Находим закрытый ключ <code>d</code></h2>
-  <p>Ищем <code>d</code>, такое что:</p>
-  <pre>(e × d) mod φ(n) = 1<br>→ (5 × d) mod 72 = 1</pre>
-  <p>Решение:</p>
-  <pre>5 × 29 = 145<br>145 mod 72 = 1 → ✅<br>⇒ d = 29</pre>
+    <p><strong>5. Закрытый ключ:</strong> d = 29, так как (5 × 29) mod 72 = 1</p>
 
-  <div class="keys">
-    🔑 Открытый ключ: <code>(n, e) = (91, 5)</code><br>
-    🔒 Закрытый ключ: <code>(n, d) = (91, 29)</code>
+    <div class="keys">
+      🔑 Открытый ключ: <code>(91, 5)</code>  
+      🔒 Закрытый ключ: <code>(91, 29)</code>
+    </div>
   </div>
 
-  <div class="note">
-    <strong>Отличие от предыдущих примеров:</strong> здесь открытый и закрытый ключи <strong>явно разные</strong> — как в настоящем RSA! Это помогает понять, как работает асимметричная криптография: шифруем одним ключом, расшифровываем другим.
+  <!-- Реальный пример -->
+  <div class="example">
+    <h2>🌍 Реальный RSA-ключ (2048 бит)</h2>
+    
+    <p>В современных системах (HTTPS, SSH, PGP) используются <strong>огромные</strong> простые числа.</p>
+    
+    <p><strong>Типичный размер модуля <code>n</code>:</strong> 2048 бит ≈ <strong>617 десятичных цифр</strong>.</p>
+    
+    <p><strong>Пример реального <code>n</code></strong> (из публичного сертификата):</p>
+    
+    <div class="real-n">25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784406918290641249515082189298559149176184502808123599837772727851875849781696497884111414042858885779319736746478364299802467886634938916284484339311476739287466514467127512341376855</div>
+
+    <p>⚠️ <strong>Факторизация такого числа на <code>p</code> и <code>q</code> считается вычислительно невозможной</strong> даже для самых мощных суперкомпьютеров.</p>
+    
+    <div class="note">
+      <strong>Почему это важно?</strong> Безопасность RSA основана на том, что по известному <code>n</code> невозможно найти <code>p</code> и <code>q</code>. В учебном примере <code>n = 91</code> легко разложить (7×13), но для 617-значного числа — это невозможно.
+    </div>
   </div>
 
-  <h2>Проверка: шифрование и расшифровка</h2>
-  <p>Возьмём сообщение <code>m = 10</code> (должно быть <code>0 &lt; m &lt; 91</code> и взаимно просто с 91).</p>
-  <pre>Шифрование:  c = 10⁵ mod 91 = 100000 mod 91 = 82<br>
-Расшифровка: m = 82²⁹ mod 91 = 10 ✅</pre>
-  <p>Сообщение успешно восстановлено!</p>
+  <div class="note" style="background-color: #e8f5e9; border-left-color: #2ecc71;">
+    <strong>Итог:</strong> Учебные примеры помогают понять логику RSA, но <strong>никогда не используются в реальных системах</strong>. Настоящая безопасность достигается только при использовании очень больших простых чисел (2048+ бит).
+  </div>
 
 </body>
 </html>
