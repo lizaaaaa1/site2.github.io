@@ -13,6 +13,124 @@
     <p>ФХНЗКЧ- ПРИВЕТ - k=5</p>
     <p>ЦЩЕБФ- ВЕСНА - k=20</p>
     <p>МОИСЕЕВА - ЦШТЫППМК - k=10</p>
+    <p>Созданно: 21 января 2026</p>
+    <!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Учебный пример RSA (p=7, q=13)</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fdfdfd;
+      color: #222;
+    }
+    h1 {
+      text-align: center;
+      color: #8e44ad;
+      margin-bottom: 30px;
+      font-size: 26px;
+    }
+    h2 {
+      color: #9b59b6;
+      margin-top: 25px;
+      font-size: 20px;
+    }
+    pre {
+      background-color: #f9f0ff;
+      padding: 14px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 16px;
+      border-left: 4px solid #9b59b6;
+      margin: 15px 0;
+    }
+    .keys {
+      background-color: #f5e6ff;
+      padding: 18px;
+      border-radius: 10px;
+      margin: 25px 0;
+      font-weight: bold;
+      font-size: 19px;
+      color: #8e44ad;
+      text-align: center;
+      border: 2px solid #e6d4ff;
+    }
+    .note {
+      background-color: #e8f4fc;
+      padding: 16px;
+      border-radius: 8px;
+      margin: 25px 0;
+      border-left: 5px solid #3498db;
+      font-size: 16px;
+    }
+    code {
+      background-color: #f1f1f1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 16px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Учебный пример алгоритма RSA<br><small>(с числами p = 7, q = 13)</small></h1>
+
+  <h2>1. Выбираем два простых числа <code>p</code> и <code>q</code></h2>
+  <p>Простые числа делятся только на 1 и самих себя.</p>
+  <pre>p = 7<br>q = 13</pre>
+
+  <h2>2. Вычисляем модуль <code>n = p × q</code></h2>
+  <pre>n = 7 × 13 = 91</pre>
+
+  <h2>3. Вычисляем функцию Эйлера <code>φ(n)</code></h2>
+  <pre>φ(n) = (p − 1)(q − 1) = (7 − 1) × (13 − 1) = 6 × 12 = 72</pre>
+
+  <h2>4. Выбираем открытую экспоненту <code>e</code></h2>
+  <p>Требования:</p>
+  <ul>
+    <li><code>1 &lt; e &lt; φ(n)</code></li>
+    <li><code>НОД(e, φ(n)) = 1</code></li>
+  </ul>
+  <p>Выбираем <code>e = 5</code>:</p>
+  <pre>НОД(5, 72) = 1 → ✅ подходит!</pre>
+  <p>Другие возможные значения: 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, 41, 43, 47, 49, 53, 55, 59, 61, 65, 67, 71.</p>
+
+  <h2>5. Находим закрытый ключ <code>d</code></h2>
+  <p>Ищем <code>d</code>, такое что:</p>
+  <pre>(e × d) mod φ(n) = 1<br>→ (5 × d) mod 72 = 1</pre>
+  <p>Решение:</p>
+  <pre>5 × 29 = 145<br>145 mod 72 = 1 → ✅<br>⇒ d = 29</pre>
+
+  <div class="keys">
+    🔑 Открытый ключ: <code>(n, e) = (91, 5)</code><br>
+    🔒 Закрытый ключ: <code>(n, d) = (91, 29)</code>
+  </div>
+
+  <div class="note">
+    <strong>Отличие от предыдущих примеров:</strong> здесь открытый и закрытый ключи <strong>явно разные</strong> — как в настоящем RSA! Это помогает понять, как работает асимметричная криптография: шифруем одним ключом, расшифровываем другим.
+  </div>
+
+  <h2>Проверка: шифрование и расшифровка</h2>
+  <p>Возьмём сообщение <code>m = 10</code> (должно быть <code>0 &lt; m &lt; 91</code> и взаимно просто с 91).</p>
+  <pre>Шифрование:  c = 10⁵ mod 91 = 100000 mod 91 = 82<br>
+Расшифровка: m = 82²⁹ mod 91 = 10 ✅</pre>
+  <p>Сообщение успешно восстановлено!</p>
+
+</body>
+</html>
   </body>
    <h2>01.12 , 2025</h2><img src="Icons/icon.png" alt="Новый год">
   Поздравление с Наступающим 2026 годом читайте <a href="https://www.flaticon.com/ru/free-icons/2026" title="2026 иконки">2026 иконки от Freepik - Flaticon</a>
