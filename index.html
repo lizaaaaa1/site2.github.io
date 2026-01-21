@@ -136,7 +136,37 @@
     <div class="note">
       <strong>Почему это важно?</strong> Безопасность RSA основана на том, что по известному <code>n</code> невозможно найти <code>p</code> и <code>q</code>. В учебном примере <code>n = 91</code> легко разложить (7×13), но для 617-значного числа — это невозможно.
     </div>
-  <span style="font-family: 'Comic Sans MS', cursive, sans-serif; font-size: 24px; color: #ff69b4; font-weight: bold;">Пуделинка любит шифровать! 🐩💖</span>
+  <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Пуделинка шифрует</title>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #fff9fb;
+    }
+    .pudelinka {
+      font-family: 'Indie Flower', cursive;
+      font-size: 26px;
+      color: #d87093;
+      text-align: center;
+      padding: 20px;
+      max-width: 90%;
+    }
+  </style>
+</head>
+<body>
+  <div class="pudelinka">
+    p=7, q=13 → n=91, φ(n)=72, e=5 (НОД=1 ✅), d=29 (5×29 mod 72=1 ✅) → открытый ключ (91,5), закрытый ключ (91,29)! Пуделинка 🐩🔐
+  </div>
+</body>
+</html>
   <body>
 </html>
   </body>
