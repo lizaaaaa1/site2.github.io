@@ -1,219 +1,143 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-<title>Мой блог</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Мой блог</title>
     <link type="text/css" rel="stylesheet" href="style.css" />
-</head>
-      <title>Привет мир</title>
-  </head>
-  <body>
-    <p>Создано:21 февраля 2026/p>
-      <div style="margin: 20px 0; font-family: Arial, sans-serif; font-size: 16px; color: #333;">
-    <strong>Способы оплаты:</strong>
-    <ul style="margin-top: 10px;">
-        <li>💳 Банковской картой на сайте</li>
-        <li>💵 Наличными при получении</li>
-        <li>📱 Через СБП</li>
-    </ul>
-</div>
-    <p>Создано:17 февраля 2026</p>
-    <img src=/home/user/2025/104C/круассан.webp >
-      <p>Топ-3 предсказаний:
-conch: 44.09%
-baguette: 22.22%
-pot pie: 5.78%
-  </p>
-    <p>Созданно: 19 января 2026</p>
-    <p>АПЕЛЬСИН - САЦЬНВЩО - k=17</p>
-    <p>АБРИКОС - ЫЬЛГЕЙМ - k=27</p>
-    <p>ФХНЗКЧ- ПРИВЕТ - k=5</p>
-    <p>ЦЩЕБФ- ВЕСНА - k=20</p>
-    <p>МОИСЕЕВА - ЦШТЫППМК - k=10</p>
-    <body>
-    <p>Созданно: 21 января 2026</p>
-    <!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Учебный и реальный RSA</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.7;
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 20px;
-      background-color: #fdfdfd;
-      color: #222;
-    }
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-      margin-bottom: 20px;
-      font-size: 28px;
-    }
-    h2 {
-      color: #2980b9;
-      margin-top: 30px;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 8px;
-    }
-    .example {
-      background-color: #f9f9f9;
-      padding: 20px;
-      border-radius: 10px;
-      margin-bottom: 30px;
-      border-left: 5px solid #3498db;
-    }
-    .real-n {
-      background-color: #2c3e50;
-      color: #ecf0f1;
-      padding: 20px;
-      border-radius: 10px;
-      font-family: monospace;
-      font-size: 14px;
-      overflow-x: auto;
-      white-space: pre-wrap;
-      word-break: break-all;
-    }
-    pre {
-      background-color: #f0f8ff;
-      padding: 14px;
-      border-radius: 8px;
-      overflow-x: auto;
-      font-size: 16px;
-      margin: 15px 0;
-    }
-    .keys {
-      background-color: #e8f4fc;
-      padding: 16px;
-      border-radius: 8px;
-      margin: 20px 0;
-      font-weight: bold;
-      text-align: center;
-    }
-    .note {
-      background-color: #fff8e1;
-      padding: 16px;
-      border-radius: 8px;
-      margin: 25px 0;
-      border-left: 5px solid #ffc107;
-    }
-    code {
-      background-color: #f1f1f1;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-family: monospace;
-    }
-  </style>
+    <style>
+        /* Стили для блока FAQ, чтобы он выглядел аккуратно */
+        .faq-payment {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+        }
+        .faq-payment h3 { margin-top: 0; color: #333; }
+        .faq-payment ul { color: #555; line-height: 1.6; }
+        
+        /* Общие стили для тела страницы */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 20px; color: #222; }
+        img { max-width: 100%; height: auto; border-radius: 8px; margin: 10px 0; }
+        pre { background-color: #f0f8ff; padding: 14px; border-radius: 8px; overflow-x: auto; }
+        .note { background-color: #fff8e1; padding: 16px; border-radius: 8px; border-left: 5px solid #ffc107; margin: 20px 0; }
+    </style>
 </head>
 <body>
 
-  <h1>Учебный и реальный пример RSA</h1>
-
-  <!-- Учебный пример -->
-  <div class="example">
-    <h2>📚 Учебный пример (p = 7, q = 13)</h2>
-    
-    <p><strong>1. Простые числа:</strong></p>
-    <pre>p = 7,  q = 13</pre>
-
-    <p><strong>2. Модуль:</strong></p>
-    <pre>n = p × q = 7 × 13 = 91</pre>
-
-    <p><strong>3. Функция Эйлера:</strong></p>
-    <pre>φ(n) = (7−1)(13−1) = 6 × 12 = 72</pre>
-
-    <p><strong>4. Открытая экспонента:</strong> e = 5 (НОД(5, 72) = 1)</p>
-
-    <p><strong>5. Закрытый ключ:</strong> d = 29, так как (5 × 29) mod 72 = 1</p>
-
-    <div class="keys">
-      🔑 Открытый ключ: <code>(91, 5)</code>  
-      🔒 Закрытый ключ: <code>(91, 29)</code>
+    <!-- Блок с информацией об оплате (Ваш запрос) -->
+    <div class="faq-payment">
+        <h3>💳 Способы оплаты</h3>
+        <p>Оплата возможна следующими способами:</p>
+        <ul>
+            <li>💳 Банковской картой на сайте</li>
+            <li>💵 Наличными при получении</li>
+            <li>📱 Через СБП</li>
+        </ul>
     </div>
-  </div>
 
-  <!-- Реальный пример -->
-  <div class="example">
-    <h2>🌍 Реальный RSA-ключ (2048 бит)</h2>
-    
-    <p>В современных системах (HTTPS, SSH, PGP) используются <strong>огромные</strong> простые числа.</p>
-    
-    <p><strong>Типичный размер модуля <code>n</code>:</strong> 2048 бит ≈ <strong>617 десятичных цифр</strong>.</p>
-    
-    <p><strong>Пример реального <code>n</code></strong> (из публичного сертификата):</p>
-    
-    <div class="real-n">25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784406918290641249515082189298559149176184502808123599837772727851875849781696497884111414042858885779319736746478364299802467886634938916284484339311476739287466514467127512341376855</div>
+    <hr>
 
-    <p>⚠️ <strong>Факторизация такого числа на <code>p</code> и <code>q</code> считается вычислительно невозможной</strong> даже для самых мощных суперкомпьютеров.</p>
-    
-    <div class="note">
-      <strong>Почему это важно?</strong> Безопасность RSA основана на том, что по известному <code>n</code> невозможно найти <code>p</code> и <code>q</code>. В учебном примере <code>n = 91</code> легко разложить (7×13), но для 617-значного числа — это невозможно.
-    </div>
-  <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Пуделинка шифрует простые числа</title>
-  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background: linear-gradient(to bottom right, #fff9fb, #f0e6ff);
-    }
-    .pudelinka {
-      font-family: 'Indie Flower', cursive;
-      font-size: 26px;
-      color: #d87093;
-      text-align: center;
-      padding: 25px;
-      max-width: 90%;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-  </style>
-</head>
-<body>
-  <div class="pudelinka">
-    «Простые числа — мои друзья!»<br>
-    Первая буква «П» = 17 → 17⁵ mod 91 = 75 ✨<br>
-    Зашифровано ключом (91,5)!<br>
-    Пуделинка ❤️ простые числа!
-  </div>
+    <!-- Записи блога -->
+    <article>
+        <p><small>Создано: 21 февраля 2026</small></p>
+        <!-- ЗАМЕНИТЕ src НА ПУТЬ К ВАШЕМУ ФАЙЛУ -->
+        <img src="croissant.webp" alt="Круассан">
+        <p>Топ-3 предсказаний:</p>
+        <ul>
+            <li>conch: 44.09%</li>
+            <li>baguette: 22.22%</li>
+            <li>pot pie: 5.78%</li>
+        </ul>
+    </article>
+
+    <article>
+        <p><small>Создано: 17 февраля 2026</small></p>
+        <p><strong>Шифр Цезаря (примеры):</strong></p>
+        <ul>
+            <li>АПЕЛЬСИН - САЦЬНВЩО (k=17)</li>
+            <li>АБРИКОС - ЫЬЛГЕЙМ (k=27)</li>
+            <li>ФХНЗКЧ - ПРИВЕТ (k=5)</li>
+            <li>ЦЩЕБФ - ВЕСНА (k=20)</li>
+            <li>МОИСЕЕВА - ЦШТЫППМК (k=10)</li>
+        </ul>
+    </article>
+
+    <article>
+        <p><small>Создано: 21 января 2026</small></p>
+        
+        <h2>Учебный и реальный пример RSA</h2>
+        
+        <div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px; border-left: 5px solid #3498db;">
+            <h3>📚 Учебный пример (p = 7, q = 13)</h3>
+            <pre>
+p = 7,  q = 13
+n = p × q = 91
+φ(n) = 72
+e = 5
+d = 29
+            </pre>
+            <p>🔑 Открытый ключ: <code>(91, 5)</code><br>
+            🔒 Закрытый ключ: <code>(91, 29)</code></p>
+        </div>
+
+        <div style="background-color: #f9f9f9; padding: 20px; border-radius: 10px; border-left: 5px solid #3498db; margin-top: 20px;">
+            <h3>🌍 Реальный RSA-ключ (2048 бит)</h3>
+            <p>Модуль <code>n</code> (пример):</p>
+            <pre style="font-size: 12px; word-break: break-all;">
+25195908475657893494027183240048398571429282126204032027777137836043662020707595556264018525880784406918290641249515082189298559149176184502808123599837772727851875849781696497884111414042858885779319736746478364299802467886634938916284484339311476739287466514467127512341376855
+            </pre>
+            <div class="note">
+                <strong>Важно:</strong> Факторизация такого числа считается вычислительно невозможной.
+            </div>
+        </div>
+    </article>
+
+    <!-- Блок про Пуделинку -->
+    <article style="text-align: center; margin: 30px 0; font-family: 'Indie Flower', cursive; background: #fff0f5; padding: 20px; border-radius: 20px;">
+        <p>«Простые числа — мои друзья!»<br>
+        Первая буква «П» = 17 → 17⁵ mod 91 = 75 ✨<br>
+        Зашифровано ключом (91,5)!<br>
+        Пуделинка ❤️ простые числа!</p>
+    </article>
+
+    <hr>
+
+    <!-- Архив записей -->
+    <article>
+        <h2>01.12.2025</h2>
+        <img src="Icons/icon.png" alt="Новый год">
+        <p>Поздравление с Наступающим 2026 годом читайте <a href="https://www.flaticon.com/ru/free-icons/2026" title="2026 иконки">здесь (2026 иконки от Freepik - Flaticon)</a>.</p>
+    </article>
+
+    <article>
+        <p><small>Создано: 14 января 2026</small></p>
+        <p>Домен: <code>lizaaaaa.github.io</code></p>
+        <p><a href="mailto:lizamoiseeva.09@mail.ru">Напишите мне</a></p>
+    </article>
+
+    <article>
+        <h2>15 октября 2025</h2>
+        <img src="Icons/newyear.png" alt="Новый год">
+        <p>Поздравление с Наступающим 2026 годом читайте <a href="Congratulations2026.html">здесь</a>.</p>
+    </article>
+
+    <article>
+        <h2>15 октября 2025</h2>
+        <p>Я сделала Новогодние кроссворды для сайта <a href="http://адрес-сайта-друга.ru" title="Блог моего друга">Сайт моего друга</a>.</p>
+    </article>
+
+    <article>
+        <h2>1 сентября 2025</h2>
+        <blockquote>«Путешествие в тысячу миль начинается с одного шага» (Лао Цзы)</blockquote>
+        <p>Оставляю в прошлом скучную неинтересную локальную файловую систему ради Всемирной паутины.</p>
+    </article>
+
+    <footer style="margin-top: 40px; border-top: 1px solid #eee; padding-top: 20px; font-size: 0.9em; color: #666;">
+        <p>Иконки: <a href="https://www.flaticon.com/ru/free-icons/2026" title="2026 иконки">2026 иконки от Freepik - Flaticon</a></p>
+    </footer>
+
 </body>
-</html>
-</body>
-</html>
-  <body>
-</html>
-  </body>
-   <h2>01.12 , 2025</h2><img src="Icons/icon.png" alt="Новый год">
-  Поздравление с Наступающим 2026 годом читайте <a href="https://www.flaticon.com/ru/free-icons/2026" title="2026 иконки">2026 иконки от Freepik - Flaticon</a>
-    <p>Создано: 14 января 2026</p>
-    <p>Домен - lizaaaaa github io .</p>
-    <p><a href="mailto:lizamoiseeva.09@mail.ru">Напишите мне</a><p>
-    <h2> 01.12 , 2025</h2>
-<img src="Icons/имя файла вашей картинки.png" alt="Новый год">
-      <img src="my-image.jpg" alt="">
-Поздравление с Наступающим 2026 годом читайте <a href="Congratulations2026.html"> здесь.</a>
-<h2> 15 октября , 2025</h2></p><img src="Icons/имя файла вашей картинки.png" alt='Новый год">
-Поздравление с Наступающим 2026 годом читайте <a href="Congratulations2026.html"> здесь.</a>
-<h2> 15 октября , 2025</h2><p>
-Я сделала Новогодние кроссворды для сайта <a href=“http://адрес сайта друга”  title=“Блог моего друга”Сайт моего друга</a>
-</p>
-<h2> 1 сентября , 2025</h2>
-<blockquote>Путешествие в тысячу миль начинается с одного шага (Лао Цзы) </blockquote>
-<p>
-Оставляю в прошлом скучную неинтересную локальную файловую систему ради Всемирной паутины.
-</p>
-    <p>Иконки:<a href="https://www.flaticon.com/ru/free-icons/2026" title="2026 иконки">2026 иконки от Freepik - Flaticon</a>
-</p>
-  </body>
 </html>
